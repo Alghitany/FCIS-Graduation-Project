@@ -5,6 +5,7 @@ import 'package:project/widgets/Customized/custom_button.dart';
 import 'package:project/widgets/Customized/custom_text_field.dart';
 import 'package:project/widgets/Shared/shared_back_arrow.dart';
 
+import '../../widgets/Customized/custom_label.dart';
 import '../../widgets/Shared/shared_check_box.dart';
 import '../validation_text_field.dart';
 
@@ -76,42 +77,22 @@ class _DeveloperSignupScreenState extends State<DeveloperSignupScreen> {
 
                       SizedBox(height: screenHeight * 0.04,),
 
-                      const Padding(
-                        padding: EdgeInsets.only(left: 8),
-                        child: Align(
-                          alignment: Alignment.centerLeft,
-                          child: Text("First Name",
-                            style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w400,
-                                fontFamily: 'Poppins',
-                                color: Color(0xFF4D4D4D)
-                            ),
-                          ),
-                        ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 8),
+                        child: customLabel("First Name"),
                       ),
 
                       CustomTextField(
                           myController: firstName,
                           hintText: "Enter first name",
-                        validator: (value) => validateName(value ?? "")
+                          validator: (value) => validateName(value ?? "")
                       ),
 
                       SizedBox(height: screenHeight * 0.025),
 
-                      const Padding(
-                        padding: EdgeInsets.only(left: 8),
-                        child: Align(
-                          alignment: Alignment.centerLeft,
-                          child: Text("Last Name",
-                            style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w400,
-                                fontFamily: 'Poppins',
-                                color: Color(0xFF4D4D4D)
-                            ),
-                          ),
-                        ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 8),
+                        child: customLabel("Last Name"),
                       ),
 
                       CustomTextField(
@@ -122,19 +103,9 @@ class _DeveloperSignupScreenState extends State<DeveloperSignupScreen> {
 
                       SizedBox(height: screenHeight * 0.025),
 
-                      const Padding(
-                        padding: EdgeInsets.only(left: 8),
-                        child: Align(
-                          alignment: Alignment.centerLeft,
-                          child: Text("Email Address",
-                            style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w400,
-                                fontFamily: 'Poppins',
-                                color: Color(0xFF4D4D4D)
-                            ),
-                          ),
-                        ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 8),
+                        child: customLabel("Email"),
                       ),
 
                       CustomTextField(
@@ -152,19 +123,9 @@ class _DeveloperSignupScreenState extends State<DeveloperSignupScreen> {
 
                       SizedBox(height: screenHeight * 0.025),
 
-                      const Padding(
-                        padding: EdgeInsets.only(left: 8),
-                        child: Align(
-                          alignment: Alignment.centerLeft,
-                          child: Text("Password",
-                            style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w400,
-                                fontFamily: 'Poppins',
-                                color: Color(0xFF4D4D4D)
-                            ),
-                          ),
-                        ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 8),
+                        child: customLabel("Password"),
                       ),
 
                       CustomTextField(
@@ -176,19 +137,9 @@ class _DeveloperSignupScreenState extends State<DeveloperSignupScreen> {
 
                       SizedBox(height: screenHeight * 0.025),
 
-                      const Padding(
-                        padding: EdgeInsets.only(left: 8),
-                        child: Align(
-                          alignment: Alignment.centerLeft,
-                          child: Text("Confirm password",
-                            style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w400,
-                                fontFamily: 'Poppins',
-                                color: Color(0xFF4D4D4D)
-                            ),
-                          ),
-                        ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 8),
+                        child: customLabel("Confirm Password"),
                       ),
 
                       CustomTextField(

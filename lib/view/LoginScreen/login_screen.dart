@@ -4,6 +4,7 @@ import 'package:project/view/ResetPasswordScreen/reset_password_screen.dart';
 import 'package:project/widgets/Customized/custom_button.dart';
 import 'package:project/widgets/Customized/custom_text_field.dart';
 
+import '../../widgets/Customized/custom_label.dart';
 import '../../widgets/Shared/shared_back_arrow.dart';
 import '../../widgets/Shared/shared_check_box.dart';
 import '../HomePageScreen/home_page_screen.dart';
@@ -59,18 +60,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
         
                     SizedBox(height: screenWidth * 0.08),
-        
-                    const Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text("Email",
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w400,
-                          fontFamily: "Poppins",
-                          color: Color(0xFF4D4D4D)
-                        ),
-                      ),
-                    ),
+
+                    customLabel("Email"),
         
                     SizedBox(height: screenWidth * 0.03),
         
@@ -88,18 +79,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
         
                     SizedBox(height: screenWidth * 0.05),
-        
-                    const Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text("Password",
-                        style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w400,
-                            fontFamily: "Poppins",
-                            color: Color(0xFF4D4D4D)
-                        ),
-                      ),
-                    ),
+
+                    customLabel("Password"),
         
                     SizedBox(height: screenWidth * 0.03),
         

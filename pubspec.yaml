@@ -38,6 +38,7 @@ dependencies:
   flutter_svg: ^2.0.17
   flutter_bloc: ^9.0.0
   equatable: ^2.0.5
+  country_picker: ^2.0.27
 
 dev_dependencies:
   flutter_test:

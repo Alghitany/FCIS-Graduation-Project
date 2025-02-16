@@ -3,6 +3,7 @@ import 'package:project/view/ChangePasswordSuccessScreen/change_password_success
 import 'package:project/widgets/Shared/shared_back_arrow.dart';
 
 import '../../widgets/Customized/custom_button.dart';
+import '../../widgets/Customized/custom_label.dart';
 import '../../widgets/Customized/custom_text_field.dart';
 import '../validation_text_field.dart';
 
@@ -81,17 +82,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
 
                     SizedBox(height: screenWidth * 0.06),
 
-                    const Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text("Confirm password",
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w400,
-                            fontFamily: "Poppins",
-                            color: Color(0xFF4D4D4D)
-                        ),
-                      ),
-                    ),
+                    customLabel("New Password"),
 
                     SizedBox(height: screenWidth * 0.03,),
 
@@ -104,17 +95,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
 
                     SizedBox(height: screenWidth * 0.05,),
 
-                    const Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text("Confirm password",
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w400,
-                            fontFamily: "Poppins",
-                            color: Color(0xFF4D4D4D)
-                        ),
-                      ),
-                    ),
+                    customLabel("Confirm Password"),
 
                     SizedBox(height: screenWidth * 0.03,),
 
