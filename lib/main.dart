@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project/view/BioAndSkillsScreen/bio_and_skills_screen.dart';
 import 'package:project/view/DeveloperFillProfileScreen/developer_fill_profile_screen.dart';
 import 'package:project/view/SplashScreen/splash_screen.dart';
 
@@ -13,8 +14,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home:  DeveloperFillProfileScreen()
-    );
+        debugShowCheckedModeBanner: false, home: BioAndSkillsScreen());
   }
 }
