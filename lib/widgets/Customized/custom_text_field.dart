@@ -6,12 +6,15 @@ class CustomTextField extends StatefulWidget {
   final TextEditingController myController;
   final String hintText;
   final bool isPassword;
+  final VoidCallback? onSuffixTap;
+
 
   const CustomTextField({super.key,
     this.validator,
     required this.myController,
     required this.hintText,
-    this.isPassword = false});
+    this.isPassword = false,
+    this.onSuffixTap,});
 
   @override
   State<CustomTextField> createState() => _CustomTextFieldState();
@@ -32,7 +35,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
             fontSize: 14,
             fontFamily: "Poppins",
             fontWeight: FontWeight.w500,
-            color: Color(0xFFE6E6E6),
+            color: Color(0xFFC8CDE0),
           ),
         contentPadding: const EdgeInsets.only(top: 12, bottom: 12, left: 16),
         border: OutlineInputBorder(
@@ -46,16 +49,29 @@ class _CustomTextFieldState extends State<CustomTextField> {
         suffixIcon: widget.isPassword
             ? IconButton(
           icon: SvgPicture.asset(
-            _isObscured ? "assets/icons/EyeOpen.svg" : "assets/icons/EyeOpen.svg",
+            _isObscured ? "assets/icons/EyeOpen.svg" : "assets/icons/EyeClosed.svg",
             height: 15,
             width: 23,
           ),
           onPressed: () {
             setState(() {
-              _isObscured = !_isObscured; // Toggle visibility
+              _isObscured = !_isObscured;
             });
           },
-        ): null,
+        )
+            : (widget.onSuffixTap != null
+            ? InkWell(
+          onTap: widget.onSuffixTap,
+          child: const Padding(
+            padding: EdgeInsets.all(12.0),
+            child: Icon(
+              Icons.add,
+              color: Color(0xFFCCCCCC),
+              size: 24,
+            ),
+          ),
+        )
+            : null),
       ),
     );
   }

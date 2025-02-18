@@ -98,7 +98,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                         SizedBox(height: screenHeight * 0.05),
         
                         CustomButton(
-                            text: "Send OTP",
+                            text: "Send Code",
                           onPressed: () {
                             if (formState.currentState!.validate()) {
                               Navigator.push(

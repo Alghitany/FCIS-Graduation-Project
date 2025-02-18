@@ -39,7 +39,7 @@ class BioAndSkillsScreen extends StatelessWidget {
                 ),
                 MultilineTextField(
                   controller: TextEditingController(),
-                  hight: screenHeight * .288,
+                  height: screenHeight * .288,
                   hintText: 'Enter a short bio',
                 ),
                 SizedBox(
@@ -60,7 +60,7 @@ class BioAndSkillsScreen extends StatelessWidget {
                 ),
                 MultilineTextField(
                   controller: TextEditingController(),
-                  hight: screenHeight * .161,
+                  height: screenHeight * .161,
                   hintText: 'Enter your skills',
                 ),
                 SizedBox(

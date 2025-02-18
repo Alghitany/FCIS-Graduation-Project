@@ -7,7 +7,7 @@ import 'package:project/widgets/Customized/custom_text_field.dart';
 import '../../widgets/Customized/custom_label.dart';
 import '../../widgets/Shared/shared_back_arrow.dart';
 import '../../widgets/Shared/shared_check_box.dart';
-import '../HomePageScreen/home_page_screen.dart';
+import '../DeveloperHomePageScreen/developer_home_page_screen.dart';
 import '../OnBoardingScreen/on_boarding_screen.dart';
 import '../validation_text_field.dart';
 
@@ -141,7 +141,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           if (formState.currentState!.validate()) {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => const HomePageScreen()),
+                              MaterialPageRoute(builder: (context) => const DeveloperHomePageScreen()),
                             );
                           }                      },
                     ),
@@ -182,7 +182,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       text: 'Login with Google',
                       icon: 'assets/icons/Google.png',
                       onPressed: (){
-                        Navigator.push(context, MaterialPageRoute(builder: ((context)=> const HomePageScreen())));
+                        Navigator.push(context, MaterialPageRoute(builder: ((context)=> const DeveloperHomePageScreen())));
                       },),
         
                     SizedBox(height: screenWidth * 0.03),
@@ -191,7 +191,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       text: 'Login with Facebook',
                       icon: 'assets/icons/Facebook.png',
                       onPressed: (){
-                        Navigator.push(context, MaterialPageRoute(builder: ((context)=> const HomePageScreen())));
+                        Navigator.push(context, MaterialPageRoute(builder: ((context)=> const DeveloperHomePageScreen())));
                       },),
         
                     SizedBox(height: screenWidth * 0.03),
@@ -199,7 +199,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     CustomLoginWith(text: 'Login with GitHub',
                       icon: 'assets/icons/GitHub.png',
                       onPressed: (){
-                        Navigator.push(context, MaterialPageRoute(builder: ((context)=> const HomePageScreen())));
+                        Navigator.push(context, MaterialPageRoute(builder: ((context)=> const DeveloperHomePageScreen())));
                       },
                     ),
         

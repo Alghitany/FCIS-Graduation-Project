@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>Project</string>
+	<string>CareerK</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -45,5 +45,17 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>CFBundleIcons</key>
+	<dict>
+	  <key>CFBundlePrimaryIcon</key>
+	  <dict>
+	    <key>CFBundleIconFiles</key>
+	    <array>
+	      <string>AppIcon</string>
+	    </array>
+	    <key>UIPrerenderedIcon</key>
+	    <false/>
+	  </dict>
+	</dict>
 </dict>
 </plist>

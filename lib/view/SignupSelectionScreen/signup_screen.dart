@@ -26,12 +26,11 @@ class SignupScreen extends StatelessWidget {
 
                   Image.asset(
                       'assets/images/SplashLogo.png',
-                    height: screenHeight * 0.22,
-                    width: screenWidth * 0.4,
-                    fit: BoxFit.contain,),
+                    height: screenHeight * 0.3,
+                    width: screenWidth * 0.5,
+                    fit: BoxFit.cover,),
 
-                  SizedBox(height: screenHeight * 0.05,),
-                  
+
                   const Text(
                     "Please Select one of the following",
                     style: TextStyle(

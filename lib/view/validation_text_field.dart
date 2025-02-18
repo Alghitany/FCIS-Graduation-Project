@@ -26,13 +26,38 @@ String? confirmPasswordValidator(String password, String confirmPassword) {
 
 String? validateName(String value) {
   if (value.isEmpty) {
-    return "First name is required";
+    return "Name is required";
   } else if (value.length < 2) {
-    return "First name must be at least 2 characters";
+    return "name must be at least 2 characters";
   } else if (value.length > 30) {
-    return "First name must be less than 30 characters";
+    return "Name must be less than 30 characters";
   } else if (!RegExp(r"^[a-zA-Z]+$").hasMatch(value)) {
-    return "First name should only contain letters";
+    return "Name should only contain letters";
   }
   return null; // Valid input
+}
+
+bool validateURL(String url) {
+  const urlPattern =
+      r'^(https?|ftp)://[^\s/$.?#].[^\s]*$'; // RegEx pattern for URL validation
+  final regExp = RegExp(urlPattern);
+  return regExp.hasMatch(url);
+}
+
+bool isValidPositiveInteger(String input) {
+  final RegExp regex = RegExp(r'^[1-9]\d*$');
+  return regex.hasMatch(input);
+}
+
+String? validateDescription(String? value) {
+  if (value == null || value.trim().isEmpty) {
+    return "Description cannot be empty";
+  }
+  if (value.length < 10) {
+    return "Description must be at least 10 characters long";
+  }
+  if (value.length > 500) {
+    return "Description cannot exceed 500 characters";
+  }
+  return null;
 }

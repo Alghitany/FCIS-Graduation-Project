@@ -53,7 +53,7 @@ class _DeveloperSignupScreenState extends State<DeveloperSignupScreen> {
                     children: [
                       sharedBackArrow(screenWidth, context),
 
-                      SizedBox(height: screenHeight * 0.02,),
+                      SizedBox(height: screenHeight * 0.015,),
 
                       const Text("Developer",
                         style: TextStyle(
@@ -64,7 +64,7 @@ class _DeveloperSignupScreenState extends State<DeveloperSignupScreen> {
                         ),
                       ),
 
-                      SizedBox(height: screenHeight * 0.015,),
+                      SizedBox(height: screenHeight * 0.01,),
 
                       const Text("Please enter the following data",
                         style: TextStyle(
@@ -75,7 +75,7 @@ class _DeveloperSignupScreenState extends State<DeveloperSignupScreen> {
                         ),
                       ),
 
-                      SizedBox(height: screenHeight * 0.04,),
+                      SizedBox(height: screenHeight * 0.02,),
 
                       Padding(
                         padding: const EdgeInsets.only(left: 8),
@@ -88,7 +88,7 @@ class _DeveloperSignupScreenState extends State<DeveloperSignupScreen> {
                           validator: (value) => validateName(value ?? "")
                       ),
 
-                      SizedBox(height: screenHeight * 0.025),
+                      SizedBox(height: screenHeight * 0.01),
 
                       Padding(
                         padding: const EdgeInsets.only(left: 8),
@@ -101,7 +101,7 @@ class _DeveloperSignupScreenState extends State<DeveloperSignupScreen> {
                           validator: (value) => validateName(value ?? "")
                       ),
 
-                      SizedBox(height: screenHeight * 0.025),
+                      SizedBox(height: screenHeight * 0.01),
 
                       Padding(
                         padding: const EdgeInsets.only(left: 8),
@@ -121,7 +121,7 @@ class _DeveloperSignupScreenState extends State<DeveloperSignupScreen> {
                           },
                       ),
 
-                      SizedBox(height: screenHeight * 0.025),
+                      SizedBox(height: screenHeight * 0.01),
 
                       Padding(
                         padding: const EdgeInsets.only(left: 8),
@@ -135,7 +135,7 @@ class _DeveloperSignupScreenState extends State<DeveloperSignupScreen> {
                         isPassword: true,
                       ),
 
-                      SizedBox(height: screenHeight * 0.025),
+                      SizedBox(height: screenHeight * 0.01),
 
                       Padding(
                         padding: const EdgeInsets.only(left: 8),
@@ -151,7 +151,7 @@ class _DeveloperSignupScreenState extends State<DeveloperSignupScreen> {
                         isPassword: true,
                       ),
 
-                      SizedBox(height: screenHeight * 0.025),
+                      SizedBox(height: screenHeight * 0.01),
 
                       Padding(
                         padding: const EdgeInsets.only(left: 8),
