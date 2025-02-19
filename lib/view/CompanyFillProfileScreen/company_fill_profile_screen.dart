@@ -6,7 +6,7 @@ import 'package:project/widgets/Customized/multi_line_text_field.dart';
 import '../../widgets/Customized/custom_label.dart';
 import '../../widgets/Customized/custom_text_field.dart';
 import '../../widgets/Shared/shared_back_arrow.dart';
-import '../../widgets/Shared/shared_default_profile_picture.dart';
+import '../../widgets/Shared/profile_component_screen.dart';
 
 class CompanyFillProfileScreen extends StatefulWidget {
   const CompanyFillProfileScreen({super.key});
@@ -56,11 +56,7 @@ class _CompanyFillProfileScreenState extends State<CompanyFillProfileScreen> {
 
                     SizedBox(height: screenHeight * 0.02,),
 
-                    sharedDefaultProfilePicture(
-                        screenWidth,
-                        screenHeight,
-                        (){},
-                    ),
+                    ProfileScreen(screenWidth: screenWidth, screenHeight: screenHeight,),
 
                     SizedBox(height: screenHeight * 0.04),
 

@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:project/view/DeveloperFillProfileScreen/phone_number_field.dart';
 import 'package:project/widgets/Customized/custom_button.dart';
 import 'package:project/widgets/Customized/custom_text_field.dart';
 import 'package:project/widgets/Shared/shared_back_arrow.dart';
 
-import '../../widgets/Shared/shared_default_profile_picture.dart';
+import '../../widgets/Shared/profile_component_screen.dart';
 import '../DeveloperEnterLocationScreen/developer_enter_location_screen.dart';
 import 'date_of_birth_field.dart';
 
@@ -66,11 +65,7 @@ class _DeveloperFillProfileScreenState extends State<DeveloperFillProfileScreen>
                   
                       SizedBox(height: screenHeight * 0.02,),
 
-                      sharedDefaultProfilePicture(
-                          screenWidth,
-                          screenHeight,
-                          (){}
-                      ),
+                      ProfileScreen(screenWidth: screenWidth, screenHeight: screenHeight,),
 
 
                       SizedBox(height: screenHeight * 0.018),
