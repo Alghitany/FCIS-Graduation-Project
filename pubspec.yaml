@@ -40,6 +40,9 @@ dependencies:
   equatable: ^2.0.5
   country_picker: ^2.0.27
   image_picker: ^1.1.2
+  emoji_picker_flutter: ^4.3.0
+  google_fonts: ^6.2.1
+  
 
 dev_dependencies:
   flutter_test:

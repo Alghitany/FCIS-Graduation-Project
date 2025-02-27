@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:project/view/CompanySeeResumeScreen/company_see_resume_screen.dart';
 
 import '../CompanyChatWithDeveloperScreen/company_chat_with_developer_screen.dart';
-import '../CompanySeeDeveloperResumeScreen/company_see_developer_resume_screen.dart';
+
 import '../SendToApplicantsScreen/send_to_applicants_screen.dart';
 
-Widget recentAppliedCardComponent(BuildContext context){
+Widget recentAppliedCardComponent(BuildContext context) {
   return Padding(
     padding: const EdgeInsets.only(bottom: 12.0),
     child: Card(
@@ -15,11 +16,12 @@ Widget recentAppliedCardComponent(BuildContext context){
           side: const BorderSide(color: Color(0xFFF2F2F2)),
           borderRadius: BorderRadius.circular(8),
         ),
-        child:Column(
+        child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 8.0, left: 8, right: 16, bottom: 8),
+              padding: const EdgeInsets.only(
+                  top: 8.0, left: 8, right: 16, bottom: 8),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -34,34 +36,31 @@ Widget recentAppliedCardComponent(BuildContext context){
                           fit: BoxFit.cover,
                         ),
                       ),
-
-                      const SizedBox(width: 6,),
-
+                      const SizedBox(
+                        width: 6,
+                      ),
                       const Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("Client name",
+                          Text(
+                            "Client name",
                             style: TextStyle(
                                 fontFamily: 'Poppins',
                                 fontWeight: FontWeight.w400,
                                 fontSize: 12,
-                                color: Color(0xFF1A1A1A)
-                            ),
+                                color: Color(0xFF1A1A1A)),
                           ),
-
-                          Text("Mansoura,Egypt.",
+                          Text(
+                            "Mansoura,Egypt.",
                             style: TextStyle(
                                 fontFamily: 'Poppins',
                                 fontWeight: FontWeight.w300,
                                 fontSize: 12,
-                                color: Color(0xFF4D4D4D)
-                            ),
+                                color: Color(0xFF4D4D4D)),
                           )
                         ],
                       ),
-
                       const Spacer(),
-
                       CircleAvatar(
                         radius: 16,
                         backgroundColor: const Color(0xFFF2F2F2),
@@ -79,14 +78,16 @@ Widget recentAppliedCardComponent(BuildContext context){
                           ),
                         ),
                       ),
-
-                      const SizedBox(width: 10,),
-
+                      const SizedBox(
+                        width: 10,
+                      ),
                       InkWell(
-                        onTap: (){
+                        onTap: () {
                           Navigator.push(
                               context,
-                              MaterialPageRoute(builder: ((context)=> const CompanyChatWithDeveloperScreen())));
+                              MaterialPageRoute(
+                                  builder: ((context) =>
+                                      const CompanyChatWithDeveloperScreen())));
                         },
                         child: CircleAvatar(
                           radius: 16,
@@ -108,9 +109,8 @@ Widget recentAppliedCardComponent(BuildContext context){
                       ),
                     ],
                   ),
-
                   Padding(
-                    padding: const EdgeInsets.only(top: 8.0,left: 40),
+                    padding: const EdgeInsets.only(top: 8.0, left: 40),
                     child: Row(
                       children: [
                         SizedBox(
@@ -120,25 +120,28 @@ Widget recentAppliedCardComponent(BuildContext context){
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.white,
                               shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(4)
-                              ),
+                                  borderRadius: BorderRadius.circular(4)),
                             ),
                             onPressed: () {
-                              Navigator.push(context, MaterialPageRoute(builder: ((context)=> const CompanySeeDeveloperResumeScreen())));
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: ((context) =>
+                                          const CompanySeeResumeScreen())));
                             },
-                            child: const Text("See Resume",
+                            child: const Text(
+                              "See Resume",
                               style: TextStyle(
                                   fontFamily: 'Poppins',
                                   fontSize: 10,
                                   fontWeight: FontWeight.w500,
-                                  color: Color(0xFF465697)
-                              ),
+                                  color: Color(0xFF465697)),
                             ),
                           ),
                         ),
-
-                        const SizedBox(width: 38,),
-
+                        const SizedBox(
+                          width: 38,
+                        ),
                         SizedBox(
                           width: 125,
                           height: 28,
@@ -146,20 +149,22 @@ Widget recentAppliedCardComponent(BuildContext context){
                             style: ElevatedButton.styleFrom(
                               backgroundColor: const Color(0xFF7D8AC3),
                               shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(4)
-                              ),
+                                  borderRadius: BorderRadius.circular(4)),
                             ),
                             onPressed: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (
-                                      (context)=>const SendToApplicantsScreen())));
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: ((context) =>
+                                          const SendToApplicantsScreen())));
                             },
-                            child: const Text("See Details",
+                            child: const Text(
+                              "See Details",
                               style: TextStyle(
                                   fontFamily: 'Poppins',
                                   fontSize: 10,
                                   fontWeight: FontWeight.w500,
-                                  color: Colors.white
-                              ),
+                                  color: Colors.white),
                             ),
                           ),
                         ),
@@ -167,11 +172,9 @@ Widget recentAppliedCardComponent(BuildContext context){
                     ),
                   )
                 ],
-
               ),
             ),
           ],
-        )
-    ),
+        )),
   );
 }

@@ -1,532 +1,352 @@
-// import 'dart:math';
-
-// import 'package:flutter/material.dart';
-// import 'package:flutter/rendering.dart';
-// import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-// import 'package:project/widgets/Customized/custom_text_field.dart';
-// import 'package:project/widgets/Shared/shared_back_arrow.dart';
-
-// class InterestedCoursesScreen extends StatelessWidget {
-//   InterestedCoursesScreen({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     final screenWidth = MediaQuery.of(context).size.width;
-//     final screenHeight = MediaQuery.of(context).size.height;
-//     return Scaffold(
-//         body: SafeArea(
-//             child: SingleChildScrollView(
-//                 child: Padding(
-//       padding: EdgeInsets.symmetric(
-//           horizontal: screenWidth * 0.05, vertical: screenHeight * 0.02),
-//       child: Column(
-//           crossAxisAlignment: CrossAxisAlignment.start,
-//           mainAxisSize: MainAxisSize.max,
-//           children: [
-//             sharedBackArrow(screenWidth, context),
-//             SizedBox(
-//               height: screenHeight * .039,
-//             ),
-//             Text(
-//               "Select the course Your are interested..",
-//               style: TextStyle(
-//                 fontSize: 24,
-//                 fontWeight: FontWeight.w500,
-//               ),
-//             ),
-//             SizedBox(
-//               height: 24,
-//             ),
-//             CustomTextField(
-//                 myController: TextEditingController(),
-//                 hintText: 'Search course'),
-//             SizedBox(
-//               height: 40,
-//             ),
-//             Align(
-//               alignment: Alignment.topCenter,
-//               child: Text(
-//                 'Our Popular Course:',
-//                 style: TextStyle(
-//                     fontSize: 20,
-//                     fontWeight: FontWeight.w500,
-//                     color: Color(0xffB3B3B3)),
-//               ),
-//             ),
-//             StaggeredGrid.count(
-//               crossAxisCount: 2,
-//               mainAxisSpacing: 12,
-//               crossAxisSpacing: 20,
-//               children: [
-//                 Padding(
-//                   padding: const EdgeInsets.only(
-//                     top: 19,
-//                   ),
-//                   child: StaggeredGridTile.count(
-//                       crossAxisCellCount: 1,
-//                       mainAxisCellCount: 1,
-//                       child: course(
-//                         name: 'HTML',
-//                       )),
-//                 ),
-//                 Padding(
-//                   padding: const EdgeInsets.only(top: 4.0),
-//                   child: StaggeredGridTile.count(
-//                       crossAxisCellCount: 1,
-//                       mainAxisCellCount: 1,
-//                       child: course(
-//                         name: 'Mysql',
-//                       )),
-//                 ),
-//                 Padding(
-//                   padding: const EdgeInsets.only(top: 26.0),
-//                   child: StaggeredGridTile.count(
-//                       crossAxisCellCount: 1,
-//                       mainAxisCellCount: 1,
-//                       child: course(
-//                         name: 'Css',
-//                       )),
-//                 ),
-//                 Padding(
-//                   padding: const EdgeInsets.only(top: 50.0),
-//                   child: StaggeredGridTile.count(
-//                       crossAxisCellCount: 1,
-//                       mainAxisCellCount: 1,
-//                       child: course(
-//                         name: 'JAVASCRIPT',
-//                       )),
-//                 ),
-//                 Padding(
-//                   padding: const EdgeInsets.only(top: 24.0),
-//                   child: StaggeredGridTile.count(
-//                       crossAxisCellCount: 1,
-//                       mainAxisCellCount: 1,
-//                       child: course(
-//                         name: 'C++',
-//                       )),
-//                 ),
-//                 Padding(
-//                   padding: const EdgeInsets.only(top: 11.0),
-//                   child: StaggeredGridTile.count(
-//                       crossAxisCellCount: 1,
-//                       mainAxisCellCount: 1,
-//                       child: course(
-//                         name: 'C',
-//                       )),
-//                 ),
-//                 Padding(
-//                   padding: const EdgeInsets.only(top: 33.0),
-//                   child: StaggeredGridTile.count(
-//                       crossAxisCellCount: 1,
-//                       mainAxisCellCount: 1,
-//                       child: course(
-//                         name: 'BOOT STRAP',
-//                       )),
-//                 ),
-//                 Padding(
-//                   padding: const EdgeInsets.only(top: 10.0),
-//                   child: StaggeredGridTile.count(
-//                       crossAxisCellCount: 1,
-//                       mainAxisCellCount: 1,
-//                       child: course(
-//                         name: 'REACT',
-//                       )),
-//                 ),
-//                 Padding(
-//                   padding: const EdgeInsets.only(top: 20.0),
-//                   child: StaggeredGridTile.count(
-//                       crossAxisCellCount: 1,
-//                       mainAxisCellCount: 1,
-//                       child: course(
-//                         name: 'C#',
-//                       )),
-//                 ),
-//                 Padding(
-//                   padding: const EdgeInsets.only(top: 25.0),
-//                   child: StaggeredGridTile.count(
-//                       crossAxisCellCount: 1,
-//                       mainAxisCellCount: 1,
-//                       child: course(
-//                         name: 'UI/UX',
-//                       )),
-//                 ),
-//                 Padding(
-//                   padding: const EdgeInsets.only(top: 19.0),
-//                   child: StaggeredGridTile.count(
-//                       crossAxisCellCount: 1,
-//                       mainAxisCellCount: 1,
-//                       child: course(
-//                         name: 'GOOGLE COURSE',
-//                       )),
-//                 ),
-//                 Padding(
-//                   padding: const EdgeInsets.only(top: 25.0),
-//                   child: StaggeredGridTile.count(
-//                       crossAxisCellCount: 1,
-//                       mainAxisCellCount: 1,
-//                       child: course(
-//                         name: 'JAVA',
-//                       )),
-//                 ),
-//                 Padding(
-//                   padding: const EdgeInsets.only(top: 33.0),
-//                   child: StaggeredGridTile.count(
-//                       crossAxisCellCount: 1,
-//                       mainAxisCellCount: 1,
-//                       child: course(
-//                         name: 'CLOUD STORAGE',
-//                       )),
-//                 ),
-//               ],
-//             )
-//           ]),
-//     ))));
-//   }
-
-//   Widget buildCourseButton(String course) {
-//     return ElevatedButton(
-//       onPressed: () {
-//         print("$course Clicked");
-//       },
-//       style: ElevatedButton.styleFrom(
-//         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-//         shape: RoundedRectangleBorder(
-//           borderRadius: BorderRadius.circular(30),
-//           side: BorderSide(color: Colors.deepPurple),
-//         ),
-//         backgroundColor: Colors.white,
-//         foregroundColor: Colors.deepPurple,
-//         textStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-//       ),
-//       child: Text("$course +"),
-//     );
-//   }
-// }
-
-// class course extends StatelessWidget {
-//   const course({super.key, required this.name});
-//   final String name;
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       padding: EdgeInsets.symmetric(vertical: 10),
-//       child: Center(
-//         child: Text(
-//           name,
-//           style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
-//         ),
-//       ),
-//       decoration: BoxDecoration(
-//           border: Border.all(), borderRadius: BorderRadius.circular(30)),
-//     );
-//   }
-// }
-
-// import 'dart:math';
-// import 'package:flutter/material.dart';
-
-// class CourseSelectionScreen extends StatefulWidget {
-//   @override
-//   _CourseSelectionScreenState createState() => _CourseSelectionScreenState();
-// }
-
-// class _CourseSelectionScreenState extends State<CourseSelectionScreen> {
-//   final List<String> courses = [
-//     "HTML",
-//     "Mysql",
-//     "JAVASCRIPT",
-//     "CSS",
-//     "C",
-//     "C++",
-//     "React",
-//     "BOOT STRAP",
-//     "UI/UX",
-//     "C#",
-//     "Java",
-//     "Google Courses",
-//     "Cloud Storage",
-//     "PHP",
-//     "Python",
-//     "Angular",
-//     "Vue.js"
-//   ];
-
-//   final double chipWidth = 110;
-//   final double chipHeight = 50;
-//   final List<Offset> positions = [];
-//   final Random random = Random();
-
-//   @override
-//   void initState() {
-//     super.initState();
-//     WidgetsBinding.instance.addPostFrameCallback((_) {
-//       _generatePositions();
-//     });
-//   }
-
-//   void _generatePositions() {
-//     positions.clear();
-//     final screenWidth = MediaQuery.of(context).size.width;
-//     final double containerWidth = screenWidth - 32;
-//     final int columns = (containerWidth ~/ chipWidth).clamp(1, courses.length);
-//     final int rows = (courses.length / columns).ceil();
-//     final double containerHeight =
-//         rows * chipHeight * 1.5; // Increased height for more spacing
-
-//     for (var i = 0; i < courses.length; i++) {
-//       int col = i % columns;
-//       int row = i ~/ columns;
-//       double left = col * chipWidth + random.nextDouble() * 20;
-//       double top = row * chipHeight * 1.5 + random.nextDouble() * 20;
-//       positions.add(Offset(left, top));
-//     }
-
-//     setState(() {});
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         leading: IconButton(
-//           icon: Icon(Icons.arrow_back),
-//           onPressed: () {},
-//         ),
-//         backgroundColor: Colors.white,
-//         elevation: 0,
-//       ),
-//       body: Column(
-//         crossAxisAlignment: CrossAxisAlignment.start,
-//         children: [
-//           Text(
-//             "Select the course\nYou are interested..",
-//             style: TextStyle(
-//               fontSize: 22,
-//               fontWeight: FontWeight.bold,
-//               color: Colors.black,
-//             ),
-//           ),
-//           SizedBox(height: 12),
-//           TextField(
-//             decoration: InputDecoration(
-//               hintText: "Search course",
-//               border: OutlineInputBorder(
-//                 borderRadius: BorderRadius.circular(8),
-//                 borderSide: BorderSide(color: Colors.grey.shade300),
-//               ),
-//               contentPadding: EdgeInsets.symmetric(horizontal: 12),
-//             ),
-//           ),
-//           SizedBox(height: 16),
-//           Text(
-//             "Our Popular Course:",
-//             style: TextStyle(
-//               fontSize: 18,
-//               fontWeight: FontWeight.bold,
-//               color: Colors.grey[700],
-//             ),
-//           ),
-//           SizedBox(height: 16),
-//           Container(
-//             color: Colors.transparent,
-//             height:
-//                 positions.isNotEmpty ? (positions.last.dy + chipHeight) : 600,
-//             width: double.infinity,
-//             child: Stack(
-//               children: List.generate(
-//                   positions.length,
-//                   (index) => Positioned(
-//                         left: positions[index].dx,
-//                         top: positions[index].dy,
-//                         child: Chip(
-//                           label: Text(courses[index]),
-//                           backgroundColor: Colors.white,
-//                           shape: StadiumBorder(
-//                             side: BorderSide(
-//                               color: Colors.blue,
-//                             ),
-//                           ),
-//                         ),
-//                       )),
-//             ),
-//           ),
-//           Spacer(),
-//           ElevatedButton(
-//             style: ElevatedButton.styleFrom(
-//               minimumSize: Size(double.infinity, 50),
-//               backgroundColor: Colors.blue,
-//               shape: RoundedRectangleBorder(
-//                 borderRadius: BorderRadius.circular(8),
-//               ),
-//             ),
-//             onPressed: () {},
-//             child: Text(
-//               "Confirm",
-//               style: TextStyle(fontSize: 16, color: Colors.white),
-//             ),
-//           ),
-//           SizedBox(height: 16),
-//         ],
-//       ),
-//     );
-//   }
-// }
-
+import 'package:flutter_svg/svg.dart';
 import 'dart:math';
 import 'package:flutter/material.dart';
 
-class CourseSelectionScreen extends StatefulWidget {
-  @override
-  _CourseSelectionScreenState createState() => _CourseSelectionScreenState();
-}
-
-class _CourseSelectionScreenState extends State<CourseSelectionScreen> {
-  final List<String> courses = [
-    "HTML",
-    "Mysql",
-    "JAVASCRIPT",
-    "CSS",
-    "C",
-    "C++",
-    "React",
-    "BOOT STRAP",
-    "UI/UX",
-    "C#",
-    "Java",
-    "Google Courses",
-    "Cloud Storage",
-    "PHP",
-    "Python",
-    "Angular",
-    "Vue.js"
-  ];
-
-  final double chipWidth = 110;
-  final double chipHeight = 50;
-  final List<Offset> positions = [];
-  final Random random = Random();
-
-  @override
-  void initState() {
-    super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      _generatePositions();
-    });
-  }
-
-  void _generatePositions() {
-    positions.clear();
-    final screenWidth = MediaQuery.of(context).size.width;
-    final double containerWidth = screenWidth - 32;
-    final int columns = (containerWidth ~/ chipWidth).clamp(1, courses.length);
-    final int rows = (courses.length / columns).ceil();
-    final double containerHeight =
-        rows * chipHeight * 1.5; // Increased height for more spacing
-
-    for (var i = 0; i < courses.length; i++) {
-      int col = i % columns;
-      int row = i ~/ columns;
-      double left = col * chipWidth + random.nextDouble() * 20;
-      double top = row * chipHeight * 1.5 + random.nextDouble() * 20;
-      positions.add(Offset(left, top));
-    }
-
-    setState(() {});
-  }
+class CourseSelectionScreen extends StatelessWidget {
+  const CourseSelectionScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final random = Random();
+    List<Widget> innerContainers = [];
+
+    // Minimum container width
+    double minContainerWidth = 109;
+
+    // List to store the positions of the containers to prevent overlap
+    List<Offset> positions = [];
+
+    // List of courses to be displayed
+    final List<String> courses = [
+      "HTML",
+      "Mysql",
+      "JAVASCRIPT",
+      "CSS",
+      "C",
+      "C++",
+      "React",
+      "BOOT STRAP",
+      "UI/UX",
+      "C#",
+      "Java",
+      "Cloud Storage"
+    ];
+
+    // Function to check if a new position overlaps with existing positions
+    bool isOverlapping(
+        Offset newPosition, double containerWidth, double containerHeight) {
+      for (var position in positions) {
+        // Check if the new position overlaps with any existing container
+        if ((newPosition.dx < position.dx + containerWidth) &&
+            (newPosition.dx + containerWidth > position.dx) &&
+            (newPosition.dy < position.dy + containerHeight) &&
+            (newPosition.dy + containerHeight > position.dy)) {
+          return true;
+        }
+      }
+      return false;
+    }
+
+    // Function to calculate text width dynamically
+    double calculateTextWidth(String text, TextStyle style) {
+      final textSpan = TextSpan(text: text, style: style);
+      final textPainter = TextPainter(
+        text: textSpan,
+        maxLines: 2,
+        textDirection: TextDirection.ltr,
+      );
+      textPainter.layout();
+      return textPainter.width;
+    }
+
+    // Get the screen width and height for responsive design
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+
+    // Padding from the parent container's border
+    double parentPadding = 5;
+
+    // Reduced container height to make the containers closer together
+    double containerHeight =
+        screenHeight * 0.04; // Reduced height to make containers closer
+
+    // Generate containers with course names
+    for (int i = 0; i < courses.length; i++) {
+      double left, top;
+      bool foundPosition = false;
+
+      // Try to find a unique position
+      while (!foundPosition) {
+        // Calculate the text width for each course dynamically
+        double textWidth =
+            calculateTextWidth(courses[i], TextStyle(fontSize: 14));
+
+        // Ensure the container's width is dynamic based on the text width, and apply a minimum width
+        double containerWidth =
+            max(textWidth + 60, minContainerWidth); // 70 padding on each side
+
+        // Generate random position within bounds of parent container
+        left = random.nextDouble() *
+                (screenWidth - containerWidth - .5 * parentPadding) +
+            parentPadding; // Random X position ensuring padding from the left
+
+        // Calculate Y position based on container height
+        top =
+            (i * containerHeight) + parentPadding; // Avoid overlap with padding
+
+        // Create an Offset for the current position
+        Offset newPosition = Offset(left, top);
+
+        // Check if the new position overlaps with any existing container
+        if (!isOverlapping(newPosition, containerWidth, containerHeight)) {
+          // If no overlap, add the position and create the container
+          positions.add(newPosition);
+          innerContainers.add(Positioned(
+            left: left,
+            top: top,
+            child: Container(
+              width: containerWidth,
+              height: containerHeight,
+              decoration: BoxDecoration(
+                border: Border.all(),
+                borderRadius: BorderRadius.circular(30),
+              ),
+              child: Center(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: 20), // Horizontal padding
+                  child: Text(
+                    courses[i], // Display the course name
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 14), // Adjust font size
+                  ),
+                ),
+              ),
+            ),
+          ));
+          foundPosition = true; // Stop the loop for this container
+        }
+      }
+    }
+
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: () {},
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.symmetric(vertical: screenHeight * 0.02),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              sharedBackArrow(screenWidth, context),
+              SizedBox(
+                height: screenHeight * .039,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
+                child: Text(
+                  "Select the course You're interested in..",
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 24,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
+                child: CustomTextField(
+                    myController: TextEditingController(),
+                    hintText: 'Search course'),
+              ),
+              SizedBox(
+                height: 40,
+              ),
+              Align(
+                alignment: Alignment.topCenter,
+                child: Text(
+                  'Our Popular Course:',
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500,
+                      color: Color(0xffB3B3B3)),
+                ),
+              ),
+              SizedBox(height: 20), // Adds spacing before the stack
+              Expanded(
+                child: Container(
+                  width: screenWidth,
+                  decoration: BoxDecoration(border: Border.all()),
+                  child: Stack(
+                    children: innerContainers,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 18,
+              ),
+              Align(
+                alignment: Alignment.bottomRight,
+                child: Container(
+                  margin: EdgeInsets.only(right: 16),
+                  decoration: BoxDecoration(
+                      border: Border.all(),
+                      borderRadius: BorderRadius.circular(8)),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text('others '),
+                      Icon(Icons.arrow_forward_sharp)
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 12,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
+                child: CustomButton(
+                  text: 'Confirm',
+                  onPressed: () {},
+                ),
+              ),
+              SizedBox(
+                height: 36,
+              )
+            ],
+          ),
         ),
-        backgroundColor: Colors.white,
-        elevation: 0,
-      ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(
-            height: 24,
-          ),
-          Text(
-            "Select the course\nYou are interested..",
-            style: TextStyle(
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-              color: Colors.black,
-            ),
-          ),
-          SizedBox(height: 12),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: TextField(
-              decoration: InputDecoration(
-                hintText: "Search course",
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8),
-                  borderSide: BorderSide(color: Colors.grey.shade300),
-                ),
-                contentPadding: EdgeInsets.symmetric(horizontal: 12),
-              ),
-            ),
-          ),
-          SizedBox(height: 16),
-          Text(
-            "Our Popular Course:",
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-              color: Colors.grey[700],
-            ),
-          ),
-          SizedBox(height: 16),
-          Container(
-            color: Colors.transparent,
-            height:
-                positions.isNotEmpty ? (positions.last.dy + chipHeight) : 600,
-            width: double.infinity,
-            child: Stack(
-              children: List.generate(
-                  positions.length,
-                  (index) => Positioned(
-                        left: positions[index].dx,
-                        top: positions[index].dy,
-                        child: Chip(
-                          label: Text(courses[index]),
-                          backgroundColor: Colors.white,
-                          shape: StadiumBorder(
-                            side: BorderSide(
-                              color: Colors.blue,
-                            ),
-                          ),
-                        ),
-                      )),
-            ),
-          ),
-          Spacer(),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                minimumSize: Size(double.infinity, 50),
-                backgroundColor: Colors.blue,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8),
-                ),
-              ),
-              onPressed: () {},
-              child: Text(
-                "Confirm",
-                style: TextStyle(fontSize: 16, color: Colors.white),
-              ),
-            ),
-          ),
-          SizedBox(height: 16),
-        ],
       ),
     );
+  }
+}
+
+Widget sharedBackArrow(double screenWidth, BuildContext context) {
+  return Align(
+    alignment: Alignment.centerLeft,
+    child: InkWell(
+      onTap: () {
+        Navigator.pop(context);
+      },
+      child: Container(
+        width: screenWidth * 0.08,
+        height: screenWidth * 0.08,
+        decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            border: Border.all(color: const Color(0xFFE6E6E6))),
+        child: const Icon(Icons.arrow_back),
+      ),
+    ),
+  );
+}
+
+class CustomTextField extends StatefulWidget {
+  final String? Function(String?)? validator;
+  final TextEditingController myController;
+  final String hintText;
+  final bool isPassword;
+  final VoidCallback? onSuffixTap;
+
+  const CustomTextField({
+    super.key,
+    this.validator,
+    required this.myController,
+    required this.hintText,
+    this.isPassword = false,
+    this.onSuffixTap,
+  });
+
+  @override
+  State<CustomTextField> createState() => _CustomTextFieldState();
+}
+
+class _CustomTextFieldState extends State<CustomTextField> {
+  bool _isObscured = true;
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      validator: widget.validator,
+      controller: widget.myController,
+      obscureText: widget.isPassword ? _isObscured : false,
+      decoration: InputDecoration(
+        hintText: widget.hintText,
+        hintStyle: const TextStyle(
+          fontSize: 14,
+          fontFamily: "Poppins",
+          fontWeight: FontWeight.w500,
+          color: Color(0xFFC8CDE0),
+        ),
+        contentPadding: const EdgeInsets.only(top: 12, bottom: 12, left: 16),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: const BorderSide(color: Color(0xFF97A1CF)),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: const BorderSide(color: Color(0xFF97A1CF)),
+        ),
+        suffixIcon: widget.isPassword
+            ? IconButton(
+                icon: SvgPicture.asset(
+                  _isObscured
+                      ? "assets/icons/EyeOpen.svg"
+                      : "assets/icons/EyeClosed.svg",
+                  height: 15,
+                  width: 23,
+                ),
+                onPressed: () {
+                  setState(() {
+                    _isObscured = !_isObscured;
+                  });
+                },
+              )
+            : (widget.onSuffixTap != null
+                ? InkWell(
+                    onTap: widget.onSuffixTap,
+                    child: const Padding(
+                      padding: EdgeInsets.all(12.0),
+                      child: Icon(
+                        Icons.add,
+                        color: Color(0xFFCCCCCC),
+                        size: 24,
+                      ),
+                    ),
+                  )
+                : null),
+      ),
+    );
+  }
+}
+
+class CustomButton extends StatelessWidget {
+  final void Function()? onPressed;
+  final String text;
+
+  const CustomButton({super.key, this.onPressed, required this.text});
+
+  @override
+  Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
+    return ElevatedButton(
+        onPressed: onPressed,
+        style: ElevatedButton.styleFrom(
+          backgroundColor: const Color(0xFF7D8AC3),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8),
+          ),
+          minimumSize: Size(screenWidth * 0.85, 53),
+        ),
+        child: Text(
+          text,
+          style: const TextStyle(
+            color: Colors.white,
+            fontSize: 14,
+            fontWeight: FontWeight.w500,
+            fontFamily: "Poppins",
+          ),
+        ));
   }
 }

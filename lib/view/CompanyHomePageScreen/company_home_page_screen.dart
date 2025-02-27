@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:project/view/CompanyHomePageScreen/recent_applied_card_component.dart';
-import '../CompanyPostJobScreen/company_post_job_screen.dart';
+import '../CompanyPostJobScreen/company_post_job1_screen.dart';
 import '../DeveloperDetailsOfferScreen/available_people_card.dart';
 import '../NotificationScreen/notification_screen.dart';
 
@@ -32,7 +32,8 @@ class _CompanyHomePageScreenState extends State<CompanyHomePageScreen> {
 
     // Adjust padding and font size based on screen size
     double padding = screenWidth * 0.04; // 4% of the screen width
-    double fontSize = screenWidth < 600 ? 12.0 : 14.0; // Adjust font size for smaller screens
+    double fontSize =
+        screenWidth < 600 ? 12.0 : 14.0; // Adjust font size for smaller screens
     double avatarRadius = screenWidth < 600 ? 30 : 36; // Adjust avatar size
 
     return Scaffold(
@@ -46,7 +47,8 @@ class _CompanyHomePageScreenState extends State<CompanyHomePageScreen> {
                   children: [
                     CircleAvatar(
                       radius: avatarRadius,
-                      backgroundImage: const AssetImage("assets/images/DefaultCompanyProfileImage.png"),
+                      backgroundImage: const AssetImage(
+                          "assets/images/DefaultCompanyProfileImage.png"),
                     ),
                     SizedBox(width: padding),
                     const Column(
@@ -78,7 +80,8 @@ class _CompanyHomePageScreenState extends State<CompanyHomePageScreen> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const NotificationScreen()),
+                          MaterialPageRoute(
+                              builder: (context) => const NotificationScreen()),
                         );
                       },
                       icon: SvgPicture.asset(
@@ -91,7 +94,9 @@ class _CompanyHomePageScreenState extends State<CompanyHomePageScreen> {
                   ],
                 ),
               ),
-              SizedBox(height: screenHeight * 0.04), // Adjust spacing based on screen height
+              SizedBox(
+                  height: screenHeight *
+                      0.04), // Adjust spacing based on screen height
               Padding(
                 padding: EdgeInsets.only(left: padding),
                 child: Align(
@@ -108,7 +113,8 @@ class _CompanyHomePageScreenState extends State<CompanyHomePageScreen> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(top: padding, left: padding, bottom: 24),
+                margin:
+                    EdgeInsets.only(top: padding, left: padding, bottom: 24),
                 height: 100,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
@@ -137,7 +143,8 @@ class _CompanyHomePageScreenState extends State<CompanyHomePageScreen> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(top: padding, left: padding, bottom: 24, right: padding),
+                margin: EdgeInsets.only(
+                    top: padding, left: padding, bottom: 24, right: padding),
                 height: 375,
                 child: ListView(
                   scrollDirection: Axis.vertical,
@@ -175,7 +182,9 @@ class _CompanyHomePageScreenState extends State<CompanyHomePageScreen> {
                       fontSize: 12,
                       fontFamily: 'Poppins',
                       fontWeight: FontWeight.w500,
-                      color: _selectedIndex == 0 ? _selectedColor : _unselectedColor,
+                      color: _selectedIndex == 0
+                          ? _selectedColor
+                          : _unselectedColor,
                     ),
                   ),
                 ],
@@ -184,7 +193,8 @@ class _CompanyHomePageScreenState extends State<CompanyHomePageScreen> {
                 _onItemTapped(0);
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => const CompanyHomePageScreen()),
+                  MaterialPageRoute(
+                      builder: (context) => const CompanyHomePageScreen()),
                 );
               },
             ),
@@ -205,7 +215,9 @@ class _CompanyHomePageScreenState extends State<CompanyHomePageScreen> {
                       fontSize: 12,
                       fontFamily: 'Poppins',
                       fontWeight: FontWeight.w500,
-                      color: _selectedIndex == 1 ? _selectedColor : _unselectedColor,
+                      color: _selectedIndex == 1
+                          ? _selectedColor
+                          : _unselectedColor,
                     ),
                   ),
                 ],
@@ -234,7 +246,9 @@ class _CompanyHomePageScreenState extends State<CompanyHomePageScreen> {
                       fontSize: 12,
                       fontFamily: 'Poppins',
                       fontWeight: FontWeight.w500,
-                      color: _selectedIndex == 2 ? _selectedColor : _unselectedColor,
+                      color: _selectedIndex == 2
+                          ? _selectedColor
+                          : _unselectedColor,
                     ),
                   ),
                 ],
@@ -260,7 +274,9 @@ class _CompanyHomePageScreenState extends State<CompanyHomePageScreen> {
                       fontSize: 12,
                       fontFamily: 'Poppins',
                       fontWeight: FontWeight.w500,
-                      color: _selectedIndex == 3 ? _selectedColor : _unselectedColor,
+                      color: _selectedIndex == 3
+                          ? _selectedColor
+                          : _unselectedColor,
                     ),
                   ),
                 ],
@@ -276,7 +292,7 @@ class _CompanyHomePageScreenState extends State<CompanyHomePageScreen> {
         onTap: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const CompanyPostJobScreen()),
+            MaterialPageRoute(builder: (context) => CompanyPostJob1Screen()),
           );
         },
         child: Container(
