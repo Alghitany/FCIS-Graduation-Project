@@ -41,7 +41,7 @@ class _CompanyHomePageScreenState extends State<CompanyHomePageScreen> {
           child: Column(
             children: [
               Padding(
-                padding: EdgeInsets.only(right: padding, left: padding, top: padding),
+                padding: EdgeInsets.symmetric(horizontal: padding),
                 child: Row(
                   children: [
                     CircleAvatar(
@@ -91,7 +91,7 @@ class _CompanyHomePageScreenState extends State<CompanyHomePageScreen> {
                   ],
                 ),
               ),
-              SizedBox(height: screenHeight * 0.02), // Adjust spacing based on screen height
+              SizedBox(height: screenHeight * 0.04), // Adjust spacing based on screen height
               Padding(
                 padding: EdgeInsets.only(left: padding),
                 child: Align(
