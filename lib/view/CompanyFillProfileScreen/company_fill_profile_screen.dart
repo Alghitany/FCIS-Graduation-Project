@@ -33,74 +33,76 @@ class _CompanyFillProfileScreenState extends State<CompanyFillProfileScreen> {
     final screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      body: SafeArea(
-          child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Form(
-                key: formState,
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    sharedBackArrow(screenWidth, context),
-
-                    SizedBox(height: screenHeight * 0.01),
-
-                    const Text("Fill Your Profile",
-                      style: TextStyle(
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.w500,
-                        fontSize: 24,
-                        color: Color(0xFF333333),
+      body: SingleChildScrollView(
+        child: SafeArea(
+            child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Form(
+                  key: formState,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      sharedBackArrow(screenWidth, context),
+        
+                      SizedBox(height: screenHeight * 0.01),
+        
+                      const Text("Fill Your Profile",
+                        style: TextStyle(
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.w500,
+                          fontSize: 24,
+                          color: Color(0xFF333333),
+                        ),
                       ),
-                    ),
-
-                    SizedBox(height: screenHeight * 0.02,),
-
-                    ProfileScreen(screenWidth: screenWidth, screenHeight: screenHeight,),
-
-                    SizedBox(height: screenHeight * 0.04),
-
-                    CustomTextField(
-                      myController: companyName,
-                      hintText: "Enter company name",
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return "Company name is required";
-                        }
-                        return null;
-                      },
-                    ),
-
-                    SizedBox(height: screenHeight * 0.02,),
-
-                    customLabel("Brief Description"),
-
-                    SizedBox(height: screenHeight * 0.015,),
-
-                    MultilineTextField(
-                        controller: description,
-                        height: screenHeight * .25,
-                        hintText: 'Enter a details company',
-                    ),
-
-                    SizedBox(height: screenHeight * 0.015,),
-
-                    CustomButton(
-                        text: "Continue",
-                        onPressed: (){
-                          if (formState.currentState!.validate()) {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: ((context)=> const CompanyInformationScreen()))
-                            );
+        
+                      SizedBox(height: screenHeight * 0.02,),
+        
+                      ProfileScreen(screenWidth: screenWidth, screenHeight: screenHeight,),
+        
+                      SizedBox(height: screenHeight * 0.04),
+        
+                      CustomTextField(
+                        myController: companyName,
+                        hintText: "Enter company name",
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return "Company name is required";
                           }
+                          return null;
                         },
-                    )
-
-                  ],
+                      ),
+        
+                      SizedBox(height: screenHeight * 0.02,),
+        
+                      customLabel("Brief Description"),
+        
+                      SizedBox(height: screenHeight * 0.015,),
+        
+                      MultilineTextField(
+                          controller: description,
+                          height: screenHeight * .25,
+                          hintText: 'Enter a details company',
+                      ),
+        
+                      SizedBox(height: screenHeight * 0.015,),
+        
+                      CustomButton(
+                          text: "Continue",
+                          onPressed: (){
+                            if (formState.currentState!.validate()) {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: ((context)=> const CompanyInformationScreen()))
+                              );
+                            }
+                          },
+                      )
+        
+                    ],
+                  ),
                 ),
-              ),
-          )
+            )
+        ),
       ),
     );
   }
