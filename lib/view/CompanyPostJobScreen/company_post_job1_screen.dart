@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:project/view/CompanyPostJobScreen/company_post_job2_screen.dart';
-import 'package:project/view/InterestedCourses/interested_courses_screen.dart';
 import 'package:project/widgets/Customized/custom_label.dart';
+
+import '../../widgets/Customized/custom_button.dart';
+import '../../widgets/Customized/custom_text_field.dart';
+import '../../widgets/Shared/shared_back_arrow.dart';
 
 class CompanyPostJob1Screen extends StatefulWidget {
   const CompanyPostJob1Screen({super.key});
@@ -11,7 +14,7 @@ class CompanyPostJob1Screen extends StatefulWidget {
 }
 
 class _CompanyPostJob1ScreenState extends State<CompanyPostJob1Screen> {
-  TextEditingController _controller = TextEditingController();
+  final TextEditingController _controller = TextEditingController();
   int charCount = 0;
   final int maxChars = 200; // Set max characters
   String jopType = "Full Time";

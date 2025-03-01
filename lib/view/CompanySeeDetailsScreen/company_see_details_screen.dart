@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:project/view/InterestedCourses/interested_courses_screen.dart';
 
+import '../../widgets/Customized/custom_button.dart';
+import '../../widgets/Shared/shared_back_arrow.dart';
+
 class CompanySeeDetailsScreen extends StatefulWidget {
   const CompanySeeDetailsScreen({super.key});
 

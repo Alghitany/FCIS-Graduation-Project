@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:project/view/CompanyPostJobScreen/company_job_details.dart';
-import 'package:project/view/InterestedCourses/interested_courses_screen.dart';
-import 'package:project/view/validation_text_field.dart';
 import 'package:project/widgets/Customized/custom_label.dart';
 
+import '../../widgets/Customized/custom_button.dart';
+import '../../widgets/Customized/custom_text_field.dart';
+import '../../widgets/Shared/shared_back_arrow.dart';
+
 class CompanyPostJob2Screen extends StatefulWidget {
-  CompanyPostJob2Screen({super.key});
+  const CompanyPostJob2Screen({super.key});
 
   @override
   State<CompanyPostJob2Screen> createState() => _CompanyPostJob2ScreenState();

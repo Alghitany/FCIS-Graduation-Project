@@ -7,7 +7,10 @@ import 'package:project/view/CompanyPostJobScreen/company_job_details.dart';
 import 'package:project/view/CompanyPostJobScreen/company_post_job1_screen.dart';
 import 'package:project/view/CompanyPostJobScreen/company_post_job2_screen.dart';
 import 'package:project/view/ContactInformationScreen/contact_information_screen.dart';
+import 'package:project/view/DeveloperCVDownloadedScreen/cv_downloaded_successfully_screen.dart';
 import 'package:project/view/DeveloperFillProfileScreen/developer_fill_profile_screen.dart';
+import 'package:project/view/DeveloperHomePageScreen/developer_home_page_screen.dart';
+import 'package:project/view/DeveloperMyCVScreen/developer_my_cv_screen.dart';
 import 'package:project/view/InterestedCourses/interested_courses_screen.dart';
 import 'package:project/view/ResetPasswordScreen/reset_password_screen.dart';
 import 'package:project/view/CompanySeeDetailsScreen/company_see_details_screen.dart';
@@ -24,8 +27,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: CompanyChatWithDeveloperScreen());
+        home: CvDownloadedSuccessfullyScreen());
   }
 }

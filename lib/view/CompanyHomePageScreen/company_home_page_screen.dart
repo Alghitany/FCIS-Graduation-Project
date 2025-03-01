@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:project/view/CompanyHomePageScreen/recent_applied_card_component.dart';
-import '../CompanyPostJobScreen/company_post_job_screen.dart';
 import '../DeveloperDetailsOfferScreen/available_people_card.dart';
 import '../NotificationScreen/notification_screen.dart';
 
@@ -274,10 +273,10 @@ class _CompanyHomePageScreenState extends State<CompanyHomePageScreen> {
       ),
       floatingActionButton: InkWell(
         onTap: () {
-          Navigator.push(
+          /*Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => const CompanyPostJobScreen()),
-          );
+          );*/
         },
         child: Container(
           width: 64,

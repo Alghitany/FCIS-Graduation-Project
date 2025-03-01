@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:project/view/InterestedCourses/interested_courses_screen.dart';
 import 'package:project/view/models/notification_model.dart';
 
+import '../../widgets/Shared/shared_back_arrow.dart';
+
 class CampanyNotificationScreen extends StatefulWidget {
   const CampanyNotificationScreen({super.key});
 

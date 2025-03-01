@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:project/view/InterestedCourses/interested_courses_screen.dart';
 
+import '../../widgets/Customized/custom_button.dart';
+
 class CompanySeeResumeScreen extends StatelessWidget {
   const CompanySeeResumeScreen({super.key});
 
