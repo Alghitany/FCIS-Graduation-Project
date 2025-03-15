@@ -3,8 +3,10 @@ import 'package:flutter_svg/svg.dart';
 
 class DateOfBirthField extends StatefulWidget {
   final TextEditingController controller;
+  final hintText;
 
-  const DateOfBirthField({super.key, required this.controller});
+  const DateOfBirthField(
+      {super.key, required this.controller, required this.hintText});
 
   @override
   DateOfBirthFieldState createState() => DateOfBirthFieldState();
@@ -16,7 +18,8 @@ class DateOfBirthFieldState extends State<DateOfBirthField> {
     return TextFormField(
       controller: widget.controller,
       readOnly: true,
-      validator: (value) => value == null || value.isEmpty ? "Please select a date" : null,
+      validator: (value) =>
+          value == null || value.isEmpty ? "Please select a date" : null,
       onTap: () async {
         DateTime? pickedDate = await showDatePicker(
           context: context,
@@ -27,12 +30,13 @@ class DateOfBirthFieldState extends State<DateOfBirthField> {
 
         if (pickedDate != null) {
           setState(() {
-            widget.controller.text = "${pickedDate.year}-${pickedDate.month}-${pickedDate.day}";
+            widget.controller.text =
+                "${pickedDate.year}-${pickedDate.month}-${pickedDate.day}";
           });
         }
       },
       decoration: InputDecoration(
-        hintText: 'Date of Birth',
+        hintText: widget.hintText,
         hintStyle: const TextStyle(
           fontFamily: 'Poppins',
           fontSize: 16,
@@ -60,7 +64,8 @@ class DateOfBirthFieldState extends State<DateOfBirthField> {
 
             if (pickedDate != null) {
               setState(() {
-                widget.controller.text = "${pickedDate.year}-${pickedDate.month}-${pickedDate.day}";
+                widget.controller.text =
+                    "${pickedDate.year}-${pickedDate.month}-${pickedDate.day}";
               });
             }
           },

@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
+=======
+import 'package:project/view/InterestedCourses/interested_courses_screen.dart';
+import 'package:project/view/company_jops_screen/company_jops_screen.dart';
+>>>>>>> 388b3a9 (last update)
 import 'package:project/widgets/Customized/jop_container.dart';
 
 import '../../widgets/Customized/custom_button.dart';
@@ -72,7 +77,13 @@ class CompanyJobDetails extends StatelessWidget {
               ),
               CustomButton(
                 text: 'See All',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context) {
+                      return CompanyJobsScreen();
+                    },
+                  ));
+                },
               )
             ],
           ),
