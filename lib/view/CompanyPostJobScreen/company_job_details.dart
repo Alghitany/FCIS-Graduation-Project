@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-=======
-import 'package:project/view/InterestedCourses/interested_courses_screen.dart';
-import 'package:project/view/company_jops_screen/company_jops_screen.dart';
->>>>>>> 388b3a9 (last update)
+
 import 'package:project/widgets/Customized/jop_container.dart';
 
 import '../../widgets/Customized/custom_button.dart';
 import '../../widgets/Shared/shared_back_arrow.dart';
+import '../company_jops_screen/company_jops_screen.dart';
 
 class CompanyJobDetails extends StatelessWidget {
   const CompanyJobDetails({super.key});
@@ -27,17 +24,17 @@ class CompanyJobDetails extends StatelessWidget {
               sharedBackArrow(
                   screenWidth, context), // Ensure this function is defined
               SizedBox(height: screenHeight * 0.026),
-              Center(
+              const Center(
                 child: Text(
                   'Job Details',
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
-              JopContainer(),
-              SizedBox(
+              const JopContainer(),
+              const SizedBox(
                 height: 78,
               ),
 
@@ -46,33 +43,33 @@ class CompanyJobDetails extends StatelessWidget {
                 height: 144,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(72),
-                    image: DecorationImage(
+                    image: const DecorationImage(
                         fit: BoxFit.contain,
                         image: AssetImage('assets/images/DialogImage.png'))),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 24,
               ),
-              Center(
+              const Center(
                 child: Text(
                   'Job Posted',
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 16,
               ),
               Container(
-                margin: EdgeInsets.symmetric(horizontal: 57),
+                margin: const EdgeInsets.symmetric(horizontal: 57),
                 width: 261,
                 height: 43,
-                child: Text(
+                child: const Text(
                   textAlign: TextAlign.center,
                   'Now you can see the applier Resume and invite them.',
                   style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 88,
               ),
               CustomButton(

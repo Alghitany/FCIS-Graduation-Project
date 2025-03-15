@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:project/view/ChangePasswordScreen/change_password_screen.dart';
 import 'package:project/view/CompanyProfileScreen/company_profile_screen.dart';
 import 'package:project/widgets/Customized/custom_button.dart';
 

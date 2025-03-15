@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:project/view/CompanySendToApplicats/Sent_alert_dialog_component.dart';
 import 'package:project/view/CompanySendToApplicats/applicant_card_component.dart';
-import 'package:project/view/DeveloperFillProfileScreen/date_of_birth_field.dart';
-import 'package:project/view/InterestedCourses/interested_courses_screen.dart';
+
+import '../../features/authentication/developer/presentation/views/DeveloperFillProfileScreen/date_of_birth_field.dart';
+import '../../features/authentication/developer/presentation/views/InterestedCourses/course_selection_screen.dart';
+import '../../widgets/Customized/custom_button.dart';
 
 class CompanySendtoApplicatsScreen extends StatefulWidget {
   const CompanySendtoApplicatsScreen({super.key});
@@ -14,7 +16,7 @@ class CompanySendtoApplicatsScreen extends StatefulWidget {
 
 class _CompanySendtoApplicatsScreenState
     extends State<CompanySendtoApplicatsScreen> {
-  TextEditingController _controller = TextEditingController();
+  final TextEditingController _controller = TextEditingController();
   final TextEditingController dateController = TextEditingController();
   int charCount = 0;
   final int maxChars = 200;

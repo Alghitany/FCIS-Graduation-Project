@@ -3,7 +3,9 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:project/widgets/Customized/custom_button.dart';
 
-class CourseSelectionScreen extends StatefulWidget {
+class CourseSelectionScreen extends StatelessWidget {
+  const CourseSelectionScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     final random = Random();
@@ -78,7 +80,7 @@ class CourseSelectionScreen extends StatefulWidget {
       while (!foundPosition) {
         // Calculate the text width for each course dynamically
         double textWidth =
-            calculateTextWidth(courses[i], TextStyle(fontSize: 14));
+            calculateTextWidth(courses[i], const TextStyle(fontSize: 14));
 
         // Ensure the container's width is dynamic based on the text width, and apply a minimum width
         double containerWidth =
@@ -112,12 +114,12 @@ class CourseSelectionScreen extends StatefulWidget {
               ),
               child: Center(
                 child: Padding(
-                  padding: EdgeInsets.symmetric(
+                  padding: const EdgeInsets.symmetric(
                       horizontal: 20), // Horizontal padding
                   child: Text(
                     courses[i], // Display the course name
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 14), // Adjust font size
+                    style: const TextStyle(fontSize: 14), // Adjust font size
                   ),
                 ),
               ),
@@ -141,7 +143,7 @@ class CourseSelectionScreen extends StatefulWidget {
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
-                child: Text(
+                child: const Text(
                   "Select the course You're interested in..",
                   style: TextStyle(
                     fontSize: 24,
@@ -149,7 +151,7 @@ class CourseSelectionScreen extends StatefulWidget {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 24,
               ),
               Padding(
@@ -158,10 +160,10 @@ class CourseSelectionScreen extends StatefulWidget {
                     myController: TextEditingController(),
                     hintText: 'Search course'),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
-              Align(
+              const Align(
                 alignment: Alignment.topCenter,
                 child: Text(
                   'Our Popular Course:',
@@ -171,7 +173,7 @@ class CourseSelectionScreen extends StatefulWidget {
                       color: Color(0xffB3B3B3)),
                 ),
               ),
-              SizedBox(height: 20), // Adds spacing before the stack
+              const SizedBox(height: 20), // Adds spacing before the stack
               Expanded(
                 child: Container(
                   width: screenWidth,
@@ -181,17 +183,17 @@ class CourseSelectionScreen extends StatefulWidget {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 18,
               ),
               Align(
                 alignment: Alignment.bottomRight,
                 child: Container(
-                  margin: EdgeInsets.only(right: 16),
+                  margin: const EdgeInsets.only(right: 16),
                   decoration: BoxDecoration(
                       border: Border.all(),
                       borderRadius: BorderRadius.circular(8)),
-                  child: Row(
+                  child: const Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text('others '),
@@ -200,7 +202,7 @@ class CourseSelectionScreen extends StatefulWidget {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 12,
               ),
               Padding(
@@ -210,7 +212,7 @@ class CourseSelectionScreen extends StatefulWidget {
                   onPressed: () {},
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 36,
               )
             ],
