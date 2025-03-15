@@ -1,13 +1,14 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:project/view/DeveloperFillProfileScreen/developer_fill_profile_screen.dart';
 import 'package:project/widgets/Customized/custom_button.dart';
 import 'package:project/widgets/Customized/custom_text_field.dart';
 import 'package:project/widgets/Shared/shared_back_arrow.dart';
 
-import '../../widgets/Customized/custom_label.dart';
-import '../../widgets/Shared/shared_check_box.dart';
-import '../validation_text_field.dart';
+import '../../../../../../view/validation_text_field.dart';
+import '../../../../../../widgets/Customized/custom_label.dart';
+import '../../../../../../widgets/Shared/shared_check_box.dart';
+import '../DeveloperFillProfileScreen/developer_fill_profile_screen.dart';
+
 
 class DeveloperSignupScreen extends StatefulWidget {
   const DeveloperSignupScreen({super.key});

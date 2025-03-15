@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:project/view/InterestedCourses/interested_courses_screen.dart';
 
 import '../../widgets/Customized/custom_button.dart';
 import '../../widgets/Shared/shared_back_arrow.dart';
@@ -29,14 +28,14 @@ class _SeeDetailsScreenState extends State<CompanySeeDetailsScreen> {
               Row(
                 children: [
                   sharedBackArrow(screenWidth, context),
-                  SizedBox(
+                  const SizedBox(
                     width: 4,
                   ),
-                  Text(
+                  const Text(
                     'Details',
                     style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   GestureDetector(
                     onTap: () {
                       saved = !saved;
@@ -46,15 +45,15 @@ class _SeeDetailsScreenState extends State<CompanySeeDetailsScreen> {
                       saved == false
                           ? Icons.bookmark_border_outlined
                           : Icons.bookmark,
-                      color: Color(0xff5967A2),
+                      color: const Color(0xff5967A2),
                     ),
                   )
                 ],
               ),
-              SizedBox(height: 52),
+              const SizedBox(height: 52),
               Row(
                 children: [
-                  Column(
+                  const Column(
                     children: [
                       Text(
                         'Client Name',
@@ -71,12 +70,12 @@ class _SeeDetailsScreenState extends State<CompanySeeDetailsScreen> {
                       ),
                     ],
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Container(
                     width: 64,
                     height: 64,
                     decoration: BoxDecoration(
-                        image: DecorationImage(
+                        image: const DecorationImage(
                             image: AssetImage(
                                 'assets/images/DefaultDeveloperProfileImage2.png'),
                             fit: BoxFit.cover),
@@ -84,12 +83,12 @@ class _SeeDetailsScreenState extends State<CompanySeeDetailsScreen> {
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 105,
               ),
               Container(
-                margin: EdgeInsets.only(left: 16),
-                child: Column(
+                margin: const EdgeInsets.only(left: 16),
+                child: const Column(
                   children: [
                     Row(
                       children: [
@@ -129,7 +128,7 @@ class _SeeDetailsScreenState extends State<CompanySeeDetailsScreen> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 51,
               ),
               Container(
@@ -138,16 +137,16 @@ class _SeeDetailsScreenState extends State<CompanySeeDetailsScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       'Clients Details:',
                       style:
                           TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 8,
                     ),
                     Container(
-                        child: Text(
+                        child: const Text(
                       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                       style:
                           TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
@@ -155,7 +154,7 @@ class _SeeDetailsScreenState extends State<CompanySeeDetailsScreen> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 8,
               ),
               CustomButton(

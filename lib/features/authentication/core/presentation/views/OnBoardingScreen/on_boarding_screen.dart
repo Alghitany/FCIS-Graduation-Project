@@ -1,7 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-import '../../widgets/Customized/custom_button.dart';
+import '../../../../../../widgets/Customized/custom_button.dart';
 import '../LoginScreen/login_screen.dart';
 import '../SignupSelectionScreen/signup_screen.dart';
 

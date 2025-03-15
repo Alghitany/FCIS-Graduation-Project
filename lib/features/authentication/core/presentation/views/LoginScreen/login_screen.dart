@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:project/view/LoginScreen/custom_login_with.dart';
-import 'package:project/view/ResetPasswordScreen/reset_password_screen.dart';
 import 'package:project/widgets/Customized/custom_button.dart';
 import 'package:project/widgets/Customized/custom_text_field.dart';
 
-import '../../widgets/Customized/custom_label.dart';
-import '../../widgets/Shared/shared_back_arrow.dart';
-import '../../widgets/Shared/shared_check_box.dart';
-import '../DeveloperHomePageScreen/developer_home_page_screen.dart';
+import '../../../../../../view/DeveloperHomePageScreen/developer_home_page_screen.dart';
+import '../../../../../../view/validation_text_field.dart';
+import '../../../../../../widgets/Customized/custom_label.dart';
+import '../../../../../../widgets/Shared/shared_back_arrow.dart';
+import '../../../../../../widgets/Shared/shared_check_box.dart';
 import '../OnBoardingScreen/on_boarding_screen.dart';
-import '../validation_text_field.dart';
+import '../ResetPasswordScreen/reset_password_screen.dart';
+import 'custom_login_with.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});

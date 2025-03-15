@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:project/view/DeveloperFillProfileScreen/phone_number_field.dart';
+import 'package:project/features/authentication/developer/presentation/views/DeveloperFillProfileScreen/phone_number_field.dart';
 import 'package:project/widgets/Customized/custom_button.dart';
 import 'package:project/widgets/Customized/custom_text_field.dart';
 import 'package:project/widgets/Shared/shared_back_arrow.dart';
 
-import '../../widgets/Shared/profile_component_screen.dart';
+import '../../../../../../widgets/Shared/profile_component_screen.dart';
 import '../DeveloperEnterLocationScreen/developer_enter_location_screen.dart';
 import 'date_of_birth_field.dart';
 

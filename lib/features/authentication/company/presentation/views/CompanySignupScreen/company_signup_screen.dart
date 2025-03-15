@@ -4,10 +4,11 @@ import 'package:project/widgets/Customized/custom_button.dart';
 import 'package:project/widgets/Customized/custom_text_field.dart';
 import 'package:project/widgets/Shared/shared_back_arrow.dart';
 
-import '../../widgets/Customized/custom_label.dart';
-import '../../widgets/Shared/shared_check_box.dart';
-import '../CompanyFillProfileScreen/company_fill_profile_screen.dart';
-import '../validation_text_field.dart';
+import '../../../../../../view/CompanyFillProfileScreen/company_fill_profile_screen.dart';
+import '../../../../../../view/validation_text_field.dart';
+import '../../../../../../widgets/Customized/custom_label.dart';
+import '../../../../../../widgets/Shared/shared_check_box.dart';
+
 
 class CompanySignupScreen extends StatefulWidget {
   const CompanySignupScreen({super.key});

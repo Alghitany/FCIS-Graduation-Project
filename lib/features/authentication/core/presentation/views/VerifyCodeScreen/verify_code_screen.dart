@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../widgets/Customized/custom_button.dart';
-import '../../widgets/Shared/shared_back_arrow.dart';
+import '../../../../../../widgets/Customized/custom_button.dart';
+import '../../../../../../widgets/Shared/shared_back_arrow.dart';
 import 'alert_dialog_component.dart';
 import 'bloc/timer_bloc.dart';
 import 'bloc/timer_event.dart';

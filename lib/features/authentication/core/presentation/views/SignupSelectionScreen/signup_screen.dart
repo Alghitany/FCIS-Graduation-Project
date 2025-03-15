@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:project/view/DeveloperSignupScreen/developer_signup_screen.dart';
 
-import '../../widgets/Shared/shared_back_arrow.dart';
-import '../CompanySignupScreen/company_signup_screen.dart';
+import '../../../../../../widgets/Shared/shared_back_arrow.dart';
+import '../../../../company/presentation/views/CompanySignupScreen/company_signup_screen.dart';
+import '../../../../developer/presentation/views/DeveloperSignupScreen/developer_signup_screen.dart';
+
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});

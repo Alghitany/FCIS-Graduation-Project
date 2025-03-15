@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:project/view/LoginScreen/login_screen.dart';
 import 'package:project/widgets/Customized/custom_button.dart';
+
+import '../LoginScreen/login_screen.dart';
 
 class ChangePasswordSuccessScreen extends StatelessWidget {
   const ChangePasswordSuccessScreen({super.key});

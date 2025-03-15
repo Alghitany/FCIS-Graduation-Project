@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:project/view/InterestedCourses/interested_courses_screen.dart';
 
 import '../../widgets/Customized/custom_button.dart';
 
@@ -14,8 +13,8 @@ class CompanySeeResumeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 64.0, bottom: 56),
+            const Padding(
+              padding: EdgeInsets.only(top: 64.0, bottom: 56),
               child: Text(
                 'See Resume',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
@@ -26,14 +25,14 @@ class CompanySeeResumeScreen extends StatelessWidget {
               width: double.infinity,
               height: 406,
             ),
-            SizedBox(
+            const SizedBox(
               height: 72,
             ),
             CustomButton(
               text: 'back',
               onPressed: () {},
             ),
-            SizedBox(
+            const SizedBox(
               height: 97,
             )
           ],

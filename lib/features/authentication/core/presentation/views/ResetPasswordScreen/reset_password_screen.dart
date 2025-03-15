@@ -3,8 +3,8 @@ import 'package:project/widgets/Customized/custom_button.dart';
 import 'package:project/widgets/Customized/custom_text_field.dart';
 import 'package:project/widgets/Shared/shared_back_arrow.dart';
 
+import '../../../../../../view/validation_text_field.dart';
 import '../VerifyCodeScreen/verify_code_screen.dart';
-import '../validation_text_field.dart';
 
 class ResetPasswordScreen extends StatefulWidget {
   const ResetPasswordScreen({super.key});

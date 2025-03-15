@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:project/view/ChangePasswordScreen/change_password_screen.dart';
 import 'package:project/widgets/Customized/custom_button.dart';
+
+import '../ChangePasswordScreen/change_password_screen.dart';
 
 Widget alertDialog(BuildContext context){
   return AlertDialog(

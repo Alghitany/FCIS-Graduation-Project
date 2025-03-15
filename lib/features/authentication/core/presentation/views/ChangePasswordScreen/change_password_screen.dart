@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:project/view/ChangePasswordSuccessScreen/change_password_success_screen.dart';
 import 'package:project/widgets/Shared/shared_back_arrow.dart';
 
-import '../../widgets/Customized/custom_button.dart';
-import '../../widgets/Customized/custom_label.dart';
-import '../../widgets/Customized/custom_text_field.dart';
-import '../validation_text_field.dart';
+import '../../../../../../view/validation_text_field.dart';
+import '../../../../../../widgets/Customized/custom_button.dart';
+import '../../../../../../widgets/Customized/custom_label.dart';
+import '../../../../../../widgets/Customized/custom_text_field.dart';
+import '../ChangePasswordSuccessScreen/change_password_success_screen.dart';
+
 
 
 class ChangePasswordScreen extends StatefulWidget {
