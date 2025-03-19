@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:project/view/company_jops_screen/company_jops_screen.dart';
 import 'package:project/widgets/Customized/jop_container.dart';
 
 import '../../widgets/Customized/custom_button.dart';

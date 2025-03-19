@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project/view/DeveloperJopDetailsScreen/developer_related_jop_details_screen.dart';
 
 class DeveloperHomeScreen extends StatefulWidget {
   @override
@@ -138,13 +139,13 @@ class HomeScreen extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      'Polupar Courses',
+                      'Services for you',
                       style:
                           TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                     ),
                     Spacer(),
                     Text(
-                      'See All',
+                      'View All',
                       style: TextStyle(
                           fontSize: 12,
                           fontWeight: FontWeight.w600,
@@ -179,13 +180,13 @@ class HomeScreen extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      'Recomended Jobs',
+                      'Related Jobs',
                       style:
                           TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                     ),
                     Spacer(),
                     Text(
-                      'See All',
+                      'View All',
                       style: TextStyle(
                           fontSize: 12,
                           fontWeight: FontWeight.w600,
@@ -200,8 +201,24 @@ class HomeScreen extends StatelessWidget {
                 SizedBox(
                   height: 13,
                 ),
-                RecommendedJopCardContainer(),
-                RecommendedJopCardContainer(),
+                RelaredJopsContainer(
+                  ontap: () {
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) {
+                        return DeveloperRelatedJopDetailsScreen();
+                      },
+                    ));
+                  },
+                ),
+                RelaredJopsContainer(
+                  ontap: () {
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) {
+                        return DeveloperRelatedJopDetailsScreen();
+                      },
+                    ));
+                  },
+                ),
               ],
             ))
           ],
@@ -211,93 +228,96 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-class RecommendedJopCardContainer extends StatefulWidget {
-  const RecommendedJopCardContainer({super.key});
-
+class RelaredJopsContainer extends StatefulWidget {
+  const RelaredJopsContainer({super.key, required this.ontap});
+  final VoidCallback ontap;
   @override
-  State<RecommendedJopCardContainer> createState() =>
-      _RecommendedJopCardContainerState();
+  State<RelaredJopsContainer> createState() => _RelaredJopsContainerState();
 }
 
-class _RecommendedJopCardContainerState
-    extends State<RecommendedJopCardContainer> {
+class _RelaredJopsContainerState extends State<RelaredJopsContainer> {
   bool isSaved = false; // Track saved state
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      margin: EdgeInsets.only(bottom: 16, left: 4, right: 4),
-      width: double.infinity,
-      height: 109,
-      decoration: BoxDecoration(boxShadow: [
-        BoxShadow(
-          blurStyle: BlurStyle.outer,
-          color: Colors.black.withOpacity(0.2),
-          blurRadius: 10,
-          spreadRadius: 0,
-          offset: const Offset(0, 4),
-        )
-      ], borderRadius: BorderRadius.circular(20)),
-      child: Row(
-        children: [
-          Container(
-            margin: const EdgeInsets.only(right: 8),
-            width: 88,
-            height: 88,
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
-            child: Image.asset('assets/images/companyLogo.png'),
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Padding(
-                padding: EdgeInsets.only(top: 2.0, bottom: 4),
-                child: Text(
-                  'Junior Backend Engineer',
-                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
-                ),
-              ),
-              const Padding(
-                padding: EdgeInsets.only(bottom: 8),
-                child: Text(
-                  'London, United Kingdom',
-                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.w300),
-                ),
-              ),
-              Row(
-                children: const [
-                  ImageIcon(
-                    AssetImage('assets/images/coins2.png'),
-                    color: Color(0xff5967A2),
-                  ),
-                  SizedBox(width: 20),
-                  Text(
-                    '\$500 - \$1,000',
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
-                  ),
-                ],
-              )
-            ],
-          ),
-          const Spacer(),
-          GestureDetector(
-            onTap: () {
-              setState(() {
-                isSaved = !isSaved; // Toggle saved state
-              });
-            },
-            child: Icon(
-              isSaved
-                  ? Icons.bookmark
-                  : Icons.bookmark_border, // Change icon dynamically
-              color: isSaved
-                  ? const Color(0xff465697)
-                  : const Color(0xff5967A2), // Change color
-              size: 24,
+    return GestureDetector(
+      onTap: widget.ontap,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        margin: EdgeInsets.only(bottom: 16, left: 4, right: 4),
+        width: double.infinity,
+        height: 109,
+        decoration: BoxDecoration(boxShadow: [
+          BoxShadow(
+            blurStyle: BlurStyle.outer,
+            color: Colors.black.withOpacity(0.2),
+            blurRadius: 10,
+            spreadRadius: 0,
+            offset: const Offset(0, 4),
+          )
+        ], borderRadius: BorderRadius.circular(20)),
+        child: Row(
+          children: [
+            Container(
+              margin: const EdgeInsets.only(right: 8),
+              width: 88,
+              height: 88,
+              decoration:
+                  BoxDecoration(borderRadius: BorderRadius.circular(20)),
+              child: Image.asset('assets/images/companyLogo.png'),
             ),
-          ),
-        ],
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.only(top: 2.0, bottom: 4),
+                  child: Text(
+                    'Junior Backend Engineer',
+                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(bottom: 8),
+                  child: Text(
+                    'London, United Kingdom',
+                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.w300),
+                  ),
+                ),
+                Row(
+                  children: const [
+                    ImageIcon(
+                      AssetImage('assets/images/coins2.png'),
+                      color: Color(0xff5967A2),
+                    ),
+                    SizedBox(width: 20),
+                    Text(
+                      '\$500 - \$1,000',
+                      style:
+                          TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+                    ),
+                  ],
+                )
+              ],
+            ),
+            const Spacer(),
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  isSaved = !isSaved; // Toggle saved state
+                });
+              },
+              child: Icon(
+                isSaved
+                    ? Icons.bookmark
+                    : Icons.bookmark_border, // Change icon dynamically
+                color: isSaved
+                    ? const Color(0xff465697)
+                    : const Color(0xff5967A2), // Change color
+                size: 24,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
