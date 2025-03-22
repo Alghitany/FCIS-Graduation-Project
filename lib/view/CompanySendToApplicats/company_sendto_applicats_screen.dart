@@ -5,6 +5,7 @@ import 'package:project/view/CompanySendToApplicats/applicant_card_component.dar
 import '../../features/authentication/developer/presentation/views/DeveloperFillProfileScreen/date_of_birth_field.dart';
 import '../../features/authentication/developer/presentation/views/InterestedCourses/course_selection_screen.dart';
 import '../../widgets/Customized/custom_button.dart';
+import '../../widgets/Shared/shared_back_arrow.dart';
 
 class CompanySendtoApplicatsScreen extends StatefulWidget {
   const CompanySendtoApplicatsScreen({super.key});
