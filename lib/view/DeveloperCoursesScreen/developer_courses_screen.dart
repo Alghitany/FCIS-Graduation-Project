@@ -16,7 +16,7 @@ class DeveloperCoursesScreen extends StatefulWidget {
 
 class _DeveloperCoursesScreenState extends State<DeveloperCoursesScreen> {
   TextEditingController search = TextEditingController();
-  int _selectedIndex = 0;
+  int _selectedIndex = 1;
 
   final Color _selectedColor = const Color(0xFF465697);
   final Color _unselectedColor = const Color(0xFF808080);

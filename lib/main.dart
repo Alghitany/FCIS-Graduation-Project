@@ -12,6 +12,8 @@ import 'package:project/view/CompanySendToApplicats/company_sendto_applicats_scr
 import 'package:project/view/ContactInformationScreen/contact_information_screen.dart';
 import 'package:project/view/CompanySeeDetailsScreen/company_see_details_screen.dart';
 import 'package:project/view/CompanySeeResumeScreen/company_see_resume_screen.dart';
+import 'package:project/view/DeveloperCourseScreen/developer_course_screen.dart';
+import 'package:project/view/DeveloperCoursesCategoryScreen/developer_courses_category_screen.dart';
 import 'package:project/view/DeveloperCoursesScreen/developer_courses_screen.dart';
 import 'package:project/view/DeveloperJopsScreen/developer_jops_screen.dart';
 import 'package:project/view/DeveloperProfileScreen/developer_profile_screen.dart';
@@ -35,6 +37,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-        debugShowCheckedModeBanner: false, home: RoadmapScreen());
+        debugShowCheckedModeBanner: false, home: DeveloperCoursesCategoryScreen());
   }
 }
