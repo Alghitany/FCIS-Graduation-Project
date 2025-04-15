@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project/view/DeveloperJopDetailsScreen/developer_related_jop_details_screen.dart';
+import 'package:project/view/DeveloperJopsScreen/developer_jops_screen.dart';
+import 'package:project/view/DeveloperProfileScreen/developer_profile_screen.dart';
 
 class DeveloperHomeScreen extends StatefulWidget {
   @override
@@ -23,9 +25,9 @@ class _DeveloperHomeScreenState extends State<DeveloperHomeScreen> {
       case 1:
         return SearchScreen();
       case 2:
-        return JopsScreen();
+        return DeveloperJopsScreen();
       case 3:
-        return JopsScreen();
+        return DeveloperProfileScreen();
       default:
         return HomeScreen();
     }

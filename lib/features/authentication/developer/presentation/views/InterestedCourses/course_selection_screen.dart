@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:project/view/DeveloperMyCVScreen/developer_my_cv_screen.dart';
 
 class CourseSelectionScreen extends StatefulWidget {
   @override
@@ -66,7 +67,9 @@ class _CourseSelectionScreenState extends State<CourseSelectionScreen> {
       appBar: AppBar(
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
         ),
         backgroundColor: Colors.white,
         elevation: 0,
@@ -143,7 +146,13 @@ class _CourseSelectionScreenState extends State<CourseSelectionScreen> {
                   borderRadius: BorderRadius.circular(8),
                 ),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (context) {
+                    return CVScreen();
+                  },
+                ));
+              },
               child: Text(
                 "Confirm",
                 style: TextStyle(fontSize: 16, color: Colors.white),

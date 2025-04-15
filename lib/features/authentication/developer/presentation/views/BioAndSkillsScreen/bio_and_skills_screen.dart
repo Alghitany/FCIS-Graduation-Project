@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project/view/developerInformationScreen/developer_information_screen.dart';
 import 'package:project/widgets/Customized/custom_button.dart';
 import 'package:project/widgets/Customized/multi_line_text_field.dart';
 import 'package:project/widgets/Shared/shared_back_arrow.dart';
@@ -68,7 +69,13 @@ class BioAndSkillsScreen extends StatelessWidget {
                 ),
                 CustomButton(
                   text: 'Continue',
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) {
+                        return DeveloperInformationScreen();
+                      },
+                    ));
+                  },
                 )
               ],
             ),

@@ -225,6 +225,7 @@
 //   }
 // }
 
+import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:project/widgets/Customized/send_message_container.dart';
 
@@ -239,17 +240,21 @@ class DeveloperCommunityChatScreen extends StatefulWidget {
 class _DeveloperCommunityChatScreenState
     extends State<DeveloperCommunityChatScreen> {
   final TextEditingController _messageController = TextEditingController();
-  List<Widget> messages = [ResiveMessage()]; // Store messages dynamically
+  bool _showEmojiPicker = false;
+  List<Widget> messages = [ResiveMessage()];
 
   void _sendMessage() {
-    String messageText = _messageController.text.trim(); // Get text
+    String messageText = _messageController.text.trim();
     if (messageText.isNotEmpty) {
       setState(() {
-        messages.add(
-            SendMessageContainer(messsage: messageText)); // Add message to list
+        messages.add(SendMessageContainer(messsage: messageText));
       });
-      _messageController.clear(); // Clear input field
+      _messageController.clear();
     }
+  }
+
+  void _onEmojiSelected(Emoji emoji) {
+    _messageController.text += emoji.emoji;
   }
 
   @override
@@ -257,157 +262,174 @@ class _DeveloperCommunityChatScreenState
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
-        child: Column(
-          children: [
-            // Top bar (exit icon)
-            Padding(
-              padding: const EdgeInsets.only(right: 16.0, top: 16),
-              child: Align(
-                alignment: Alignment.topRight,
-                child: ImageIcon(AssetImage('assets/icons/exit.png')),
+        child: GestureDetector(
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            setState(() {
+              _showEmojiPicker = false;
+            });
+          },
+          child: Column(
+            children: [
+              // Top bar
+              Padding(
+                padding: const EdgeInsets.only(right: 16.0, top: 16),
+                child: Align(
+                  alignment: Alignment.topRight,
+                  child: ImageIcon(AssetImage('assets/icons/exit.png')),
+                ),
               ),
-            ),
-            SizedBox(height: 16),
+              SizedBox(height: 16),
 
-            // Profile and call button
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Container(
-                width: double.infinity,
-                height: 80,
-                child: Row(
-                  children: [
-                    Container(
-                      width: 56,
-                      height: 56,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(16),
-                        image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: AssetImage('assets/images/react.png'),
-                        ),
-                      ),
-                    ),
-                    SizedBox(width: 10),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('Client Name',
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.w600)),
-                        SizedBox(height: 8),
-                        Text('UI Designer',
-                            style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w400,
-                                color: Color(0xffB3B3B3))),
-                      ],
-                    ),
-                    Spacer(),
-                    GestureDetector(
-                      child: Container(
-                        width: 40,
-                        height: 40,
+              // Profile and call button
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Container(
+                  width: double.infinity,
+                  height: 80,
+                  child: Row(
+                    children: [
+                      Container(
+                        width: 56,
+                        height: 56,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(16),
                           image: DecorationImage(
                             fit: BoxFit.cover,
-                            image: AssetImage('assets/icons/add.png'),
+                            image: AssetImage('assets/images/react.png'),
                           ),
                         ),
                       ),
-                      onTap: () {},
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            SizedBox(height: 8),
-
-            // Chat messages
-            Expanded(
-              child: Container(
-                padding: EdgeInsets.only(left: 16, top: 16, right: 16),
-                color: Color(0xffF2F4F5),
-                child: ListView(
-                  children: [
-                    ...messages, // Display messages dynamically
-                  ],
-                ),
-              ),
-            ),
-
-            // Input field with send button
-            Container(
-              padding: EdgeInsets.only(left: 16),
-              width: double.infinity,
-              height: 60,
-              color: Colors.white,
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  GestureDetector(
-                    onTap: () {},
-                    child: ImageIcon(AssetImage('assets/icons/emojy.png'),
-                        color: Color(0xff999999)),
-                  ),
-                  SizedBox(width: 15),
-
-                  // TextField with shadow
-                  Expanded(
-                    child: Container(
-                      height: 40,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(15),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.2),
-                            blurRadius: 12,
-                            spreadRadius: 0,
-                            offset: Offset(0, 3),
-                          ),
+                      SizedBox(width: 10),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('Client Name',
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.w600)),
+                          SizedBox(height: 8),
+                          Text('UI Designer',
+                              style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w400,
+                                  color: Color(0xffB3B3B3))),
                         ],
                       ),
-                      child: TextField(
-                        controller: _messageController, // Attach controller
-                        onSubmitted: (value) =>
-                            _sendMessage(), // Send message on enter
-                        decoration: InputDecoration(
-                          hintText: "Type your message",
-                          hintStyle: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500,
-                              color: Color(0xffCCCCCC)),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(15),
-                            borderSide: BorderSide.none,
+                      Spacer(),
+                      GestureDetector(
+                        child: Container(
+                          width: 40,
+                          height: 40,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(16),
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage('assets/icons/add.png'),
+                            ),
                           ),
-                          filled: true,
-                          fillColor: Colors.white,
-                          contentPadding: EdgeInsets.symmetric(
-                              horizontal: 16, vertical: 12),
+                        ),
+                        onTap: () {},
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: 8),
+
+              // Chat messages
+              Expanded(
+                child: Container(
+                  padding: EdgeInsets.only(left: 16, top: 16, right: 16),
+                  color: Color(0xffF2F4F5),
+                  child: ListView(
+                    children: [...messages],
+                  ),
+                ),
+              ),
+
+              // Input and send
+              Container(
+                padding: EdgeInsets.only(left: 16),
+                width: double.infinity,
+                height: 60,
+                color: Colors.white,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    IconButton(
+                      icon: Icon(Icons.emoji_emotions),
+                      onPressed: () {
+                        FocusScope.of(context).unfocus();
+                        setState(() {
+                          _showEmojiPicker = !_showEmojiPicker;
+                        });
+                      },
+                    ),
+                    SizedBox(width: 15),
+                    Expanded(
+                      child: Container(
+                        height: 40,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(15),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.2),
+                              blurRadius: 12,
+                              offset: Offset(0, 3),
+                            ),
+                          ],
+                        ),
+                        child: TextField(
+                          controller: _messageController,
+                          onSubmitted: (_) => _sendMessage(),
+                          decoration: InputDecoration(
+                            hintText: "Type your message",
+                            hintStyle: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                                color: Color(0xffCCCCCC)),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15),
+                              borderSide: BorderSide.none,
+                            ),
+                            filled: true,
+                            fillColor: Colors.white,
+                            contentPadding: EdgeInsets.symmetric(
+                                horizontal: 16, vertical: 12),
+                          ),
                         ),
                       ),
                     ),
-                  ),
-
-                  SizedBox(width: 8),
-                  ImageIcon(AssetImage('assets/icons/microPhone.png'),
-                      color: Color(0xff666666)),
-                  SizedBox(width: 13.25),
-
-                  // Send button
-                  GestureDetector(
-                    onTap: _sendMessage, // Send message on tap
-                    child: ImageIcon(AssetImage('assets/icons/send.png'),
-                        color: Color(0xff465697)),
-                  ),
-                ],
+                    SizedBox(width: 8),
+                    ImageIcon(AssetImage('assets/icons/microPhone.png'),
+                        color: Color(0xff666666)),
+                    SizedBox(width: 13.25),
+                    GestureDetector(
+                      onTap: _sendMessage,
+                      child: ImageIcon(AssetImage('assets/icons/send.png'),
+                          color: Color(0xff465697)),
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+
+              // Emoji picker
+              Offstage(
+                offstage: !_showEmojiPicker,
+                child: SizedBox(
+                  height: 250,
+                  child: EmojiPicker(
+                    onEmojiSelected: (category, emoji) {
+                      _onEmojiSelected(emoji);
+                    },
+                    config: Config(),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -437,9 +459,7 @@ class ResiveMessage extends StatelessWidget {
                 Text(
                     style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
                     'Lorem ipsum dolor sit amet consectetur. Congue donec imperdiet accumsan faucibus id amet vel leo at. Tellus vitae lacinia tristique consequat laoreet non mus ac interdum.  Tellus vitae lacinia tristique consequat. '),
-                SizedBox(
-                  height: 12,
-                ),
+                SizedBox(height: 12),
                 Align(
                     alignment: Alignment.topRight,
                     child: Text(
@@ -450,9 +470,7 @@ class ResiveMessage extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
-            width: 2,
-          ),
+          SizedBox(width: 2),
           CircleAvatar(
             backgroundColor: Colors.redAccent,
           ),
